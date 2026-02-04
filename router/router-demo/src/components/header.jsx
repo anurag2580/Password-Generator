@@ -3,11 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="min-h-screen bg-[#FDFCF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300 selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900">
+    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center">
+      <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md px-6 py-3 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm flex items-center gap-6 md:gap-8 text-sm font-medium text-zinc-500 dark:text-zinc-400 transition-colors duration-300">
       <NavLink
       to = "/"
         className={({isActive}) =>
-        'block py-2 pr-4 ${isActive ? "text-orange-700" :"text-gray-700"} '
+       `hover:text-blue-700 ${isActive ? "text-orange-700" : "text-gray-700"} transition-colors`
       } 
       >
        Home
@@ -15,15 +16,31 @@ function Header() {
       <NavLink
       to = "/about"
         className={({isActive}) =>
-        'block py-2 pr-4 ${isActive ? "text-orange-700" :"text-gray-700"} '
+       `hover:text-blue-700 ${isActive ? "text-orange-700" : "text-gray-700"} transition-colors`
       } 
       >
        About
       </NavLink >
-      <Link to = "/contact">Contact</Link>
-      <Link to = "/github">Github</Link>
+      <NavLink
+      to = "/github"
+        className={({isActive}) =>
+       `hover:text-blue-700 ${isActive ? "text-orange-700" : "text-gray-700"} transition-colors`
+      } 
+      >
+       GitHub
+      </NavLink >
+      <NavLink
+      to = "/contact"
+        className={({isActive}) =>
+       `hover:text-blue-700 ${isActive ? "text-orange-700" : "text-gray-700"} transition-colors`
+      } 
+      >
+       Contact
+      </NavLink >
     </div>
+    </nav>
   );
 }
+
 
 export default Header;

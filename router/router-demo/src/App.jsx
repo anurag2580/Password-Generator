@@ -9,9 +9,11 @@ import { Outlet } from 'react-router-dom'
 function App() {
   return (
     <>
+    <div className="min-h-screen bg-[#FDFCF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300 selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900">
    <Header />
    <Outlet />
    <Footer />
+    </div>
    </>
   )
 }
